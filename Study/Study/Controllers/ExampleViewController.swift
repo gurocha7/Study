@@ -9,9 +9,12 @@
 import UIKit
 
 enum TypeCell: String{
-    case stack = "StackView"
-    case custom = "CustomTableView"
-    case colle = "CollectionView"
+    case stack      = "StackView"
+    case custom     = "CustomTableView"
+    case colle      = "CollectionView"
+    case scroll     = "ScrollView"
+    case gesture    = "GestureRecognizer"
+    case shape      = "ShapeLayer"
 }
 
 class ExampleViewController: UIViewController {
@@ -39,11 +42,22 @@ extension ExampleViewController: SimpleTableViewDelegate{
         
         switch type {
         case TypeCell.colle.rawValue:
-            print("")
+            let nextVC = CollectionsViewController()
+            self.navigationController?.pushViewController(nextVC, animated: true)
         case TypeCell.custom.rawValue:
-            print("")
+            let nextVC = CustomViewController()
+            self.navigationController?.pushViewController(nextVC, animated: true)
         case TypeCell.stack.rawValue:
             let nextVC = StackTableViewController()
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        case TypeCell.scroll.rawValue:
+            let nextVC = ScrollViewController()
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        case TypeCell.gesture.rawValue:
+            let nextVC = GestureViewController()
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        case TypeCell.shape.rawValue:
+            let nextVC = ShapeLayerViewController()
             self.navigationController?.pushViewController(nextVC, animated: true)
         default:
             print("")

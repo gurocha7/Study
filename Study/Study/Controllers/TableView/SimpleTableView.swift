@@ -16,7 +16,10 @@ class SimpleTableView: UITableView {
 
     let examplesText: [String] = ["CustomTableView",
                                   "CollectionView",
-                                  "StackView"]
+                                  "StackView",
+                                  "ScrollView",
+                                  "GestureRecognizer",
+                                  "ShapeLayer"]
     
     var myDelegate: SimpleTableViewDelegate?
     
